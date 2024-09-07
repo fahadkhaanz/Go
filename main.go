@@ -10,11 +10,7 @@ import (
 
 func main() {
 	f, err := os.Create("cpu.prof")
-	if err != nil {
-		fmt.Println("could not create CPU profile: ", err)
-		return
-	}
-	defer f.Close()
+	fmt.Print(err)
 	if err := pprof.StartCPUProfile(f); err != nil {
 		fmt.Println("could not start CPU profile: ", err)
 		return
